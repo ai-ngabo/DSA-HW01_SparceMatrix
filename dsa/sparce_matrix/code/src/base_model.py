@@ -61,7 +61,7 @@ def sparce_matrix(sample_file):
                         entries.append((row_n, col_n, value))
 
                     except:
-                        print('Invalid format in entry':, list_line)
+                        print('Invalid format in entry:', list_line)
                         return None
 
                 else:
