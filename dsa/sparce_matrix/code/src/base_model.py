@@ -89,4 +89,4 @@ def sparce_matrix(sample_file):
         return None
 
 # linking with my sample file
-the_file = sparce_matrix('../')
+the_file = sparce_matrix('../../sample_inputs/matrixfile3.txt')
