@@ -110,3 +110,21 @@ def multiply_matrices(matrix1, matrix2):
                 result_matrix[(row1, col2)] = result_matrix.get((row1, col2), 0) + (value1 * value2)
 
     return {'rows': matrix1['rows'], 'columns': matrix2['columns'], 'matrix': result_matrix}
+
+def transpose_matrix(matrix):
+    """Returns the transposed version of a sparse matrix."""
+    transposed = {'rows': matrix['columns'], 'columns': matrix['rows'], 'matrix': {}}
+    for (row, col), value in matrix['matrix'].items():
+        transposed['matrix'][(col, row)] = value
+    return transposed
+
+
+
+added_matrix = add_matrices(matrix1, matrix2)
+subtracted_matrix = subtract_matrices(matrix1, matrix2)
+multiplied_matrix = multiply_matrices(matrix1, transpose_matrix(matrix2))
+
+print("Addition Result:", added_matrix)
+print("Subtraction Result:", subtracted_matrix)
+print("Multiplication Result:", multiplied_matrix)
+
