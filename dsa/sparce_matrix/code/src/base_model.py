@@ -18,7 +18,7 @@ def sparce_matrix(sample_file):
 
         rows = 0 
         cols = 0
-        entries = []
+        matrix = {}
 
         for list_line in sample_list:
             # Parsing the rows part
@@ -33,8 +33,8 @@ def sparce_matrix(sample_file):
             # Parsing the columns part
             elif list_line.startswith('cols='):
                 outcome = list_line.split('=')
-                if len(outcome) == 3:
-                    cols = int(outcome[2])
+                if len(outcome) == 2:
+                    cols = int(outcome[1])
                 else:
                     print('Invalid column format:', list_line)
                     return None
@@ -59,7 +59,7 @@ def sparce_matrix(sample_file):
                         row_n = int(outcome[0])
                         col_n = int(outcome[1])
                         value_n= int(outcome[2])
-                        entries.append((row_n, col_n, value_n))
+                        matrix[(row_n, col_n)] = value_n
 
                     except:
                         print('Invalid format in entry:', list_line)
@@ -72,22 +72,48 @@ def sparce_matrix(sample_file):
             else:
                 print('Invalid List line format:', list_line)
                 return None
-
-        print("Matrix Dimensions: ")
-        print("Rows:", rows)
-        print("Columns:", cols)
-        print("Non-zero Entries:", len(entries))
-        
+        print("--------------------------") 
+        print("Dimensions of a matrix: ")
+        print("Rows: ", rows)
+        print("Columns: ", cols)
+        print("Entries: ", len(matrix))
+        print("--------------------------")
         return {
             'rows': rows,
             'columns': cols,
-            'entries': entries
+            'matrix': matrix
 
                 }
 
-    except:
+    except Exception as e:
         print('Error passing content ....')
+        print('Reason:', e)
         return None
 
 # linking with my sample file
 the_file = sparce_matrix('../../sample_inputs/matrixfile3.txt')
+print(the_file)
+
+class MatrixGenerator:
+    def __init__(self, rows, cols):
+        self.rows = rows
+        self.cols = cols
+        self.data = {} 
+
+    def getElement(seld, row, col):
+        return self.data.get((row, col), 0)
+
+    def setElement(self, row, col, value):
+        if value != 0:
+            self.data[(row, col)] = value
+
+        elif (row, col) in self.data:
+            del self.data[(r, c)]
+
+    def Addition(self, num):
+        if self.tows != num.rows or self.cols != num.cols:
+            raise ValueError('Dimensions are not matching ....')
+
+        total = MatrixGenerator(self.rows, self.cols)
+
+        for i in 
