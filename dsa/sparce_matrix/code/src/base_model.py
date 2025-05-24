@@ -84,7 +84,7 @@ class SparseMatrix:
 
 def save_file(matrix, operation):
     """Saves result to a file."""
-    file_name = f"result_{operation}.txt"
+    file_name = f"../../outputs/result_{operation}.txt"
     with open(file_name, "w") as f:
         f.write(f"Sparse Matrix (rows:{matrix.rows} & cols:{matrix.cols}):\n")
         for (row, col), value in matrix.matrix.items():
