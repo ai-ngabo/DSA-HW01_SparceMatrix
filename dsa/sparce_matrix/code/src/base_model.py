@@ -113,7 +113,7 @@ def main_menu():
             answer = matrix1.subtraction(matrix2)
             sign= "subtraction"
         elif option == "3":
-            answer = matrix1.multiplication(matrix2.transpose())
+            answer = matrix1.multiplication(matrix2.transpose()) #multiplying to a transposed matrix
             sign = "multiplication"
         elif option == "4":
             print('---------------------------------\nExiting the program! ...')
