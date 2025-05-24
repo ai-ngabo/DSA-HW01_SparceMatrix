@@ -94,26 +94,26 @@ def sparce_matrix(sample_file):
 the_file = sparce_matrix('../../sample_inputs/matrixfile3.txt')
 print(the_file)
 
-class MatrixGenerator:
-    def __init__(self, rows, cols):
-        self.rows = rows
-        self.cols = cols
-        self.data = {} 
+#class MatrixGenerator:
+    #def __init__(self, rows, cols):
+        #self.rows = rows
+        #self.cols = cols
+        #self.data = {} 
 
-    def getElement(seld, row, col):
-        return self.data.get((row, col), 0)
+    #def getElement(seld, row, col):
+        #return self.data.get((row, col), 0)
 
-    def setElement(self, row, col, value):
-        if value != 0:
-            self.data[(row, col)] = value
+    #def setElement(self, row, col, value):
+        #if value != 0:
+            #self.data[(row, col)] = value
 
-        elif (row, col) in self.data:
-            del self.data[(r, c)]
+        #elif (row, col) in self.data:
+            #del self.data[(r, c)]
 
-    def Addition(self, num):
-        if self.tows != num.rows or self.cols != num.cols:
-            raise ValueError('Dimensions are not matching ....')
+    #def Addition(self, num):
+        #if self.tows != num.rows or self.cols != num.cols:
+            #raise ValueError('Dimensions are not matching ....')
 
-        total = MatrixGenerator(self.rows, self.cols)
+        #total = MatrixGenerator(self.rows, self.cols)
 
-        for i in 
+        #for i in 
